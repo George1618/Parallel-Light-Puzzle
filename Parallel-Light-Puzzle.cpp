@@ -108,7 +108,7 @@ int main(int argc, char* argv[])
     }
     else {
         int* rootstate = new int[S];
-        MPI_Bcast(&rootstate, S, MPI_INT, MPIROOT, MPI_COMM_WORLD);
+        MPI_Bcast(rootstate, S, MPI_INT, MPIROOT, MPI_COMM_WORLD);
         for (int i = 0; i < S; i++) {
             if (rootstate[i] == BLANKVAL) root->blank = i;
             root->state[i] = rootstate[i];
